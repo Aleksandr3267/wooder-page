@@ -1,0 +1,248 @@
+
+@media(max-width:1370px){
+/* СЧЁТ */
+    .scroll {
+    margin: 275px 0 0 200px;
+    }
+    .main-screen__scroll-bar {
+        flex-direction: initial;
+    }
+    .scroll__count {
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotateZ(0deg);
+    }
+    .scroll__ellipses {
+        margin: 0 0 0 50px;
+        display: flex;
+    }
+    .scroll__ellipses .ellips {
+        margin: 0 20px;
+    }
+/* --------------------------------------- */
+
+
+/* фурнитура */
+    /* прозрачная буква фурнитуры */
+    .furniture .shudow_letter{
+        left: 26%;
+        top: -37%;
+    }
+    /* ------------------------------------ */
+    .furniture_contant, .decore_contant{
+        flex-direction: column;
+    }
+     /* картинки фурнитуры и декора */
+    .furniture_contant .furniture_image, .decore_contant .decore_image{
+        margin: 70px 0 0 0;
+    }
+    /* -------------------------------------- */
+    /* числа для фурнитуры и декора */
+    .score {
+        top: 30px;
+    }
+    /* -------------------------------------- */
+/* --------------------------------------------------------------- */
+}
+
+@media(max-width:1080px){
+    .header nav ul li a {
+        margin: 0 30px;
+    }
+    
+    /* для блока с картинкой декора */
+    .decore_contant .decore_image {
+        order: 0;
+    }
+
+    .decore_contant .decore_name{
+        margin: 0;
+        order: 0;
+    }
+    /* -------------------------------------- */
+}
+@media(max-width:910px){
+
+    /* главная */
+    .header nav .menu{
+        display: none;
+    }
+    .header nav .logo{  /* логотип */
+        margin: 0;
+    }
+    .main_bg .shudow_text{
+        right: 30%;
+        top: 77%;
+    }
+    /* ------------------------------------------- */
+
+    .quality .quality_videos_block{
+        flex-direction: column;
+        margin: 50px 0 0 0;
+    }
+    .quality .quality_videos_block .quality_video{
+        margin: 50px 0 0 0;
+    }
+
+
+    .about_us .about_us_content{
+        flex-direction: column;
+    }
+    .about_us .about_us_content .about_us_text {
+        margin: 70px 20px 0 20px;
+    }
+}
+
+@media(max-width: 720px) {
+    /* главная */
+    /* логотип */
+    .header .nav .logo a {
+        font-size: 20px;
+    }
+    .header .nav .logo a::after{
+        top: -12px;
+        left: 27px;
+        max-width: 36px;
+        height: 4px;
+    }
+    .icon_inf{
+        display: none;
+    }
+    /* ------------------------------- */
+    .main .contant{
+        text-align: center;
+        margin: 35% auto 0 auto;
+    }
+    
+    .main .contant .button{
+        margin: 30px 0 0 0;
+        text-align: center;
+    }
+    /* СЧЁТ */
+    .scroll {
+        margin: 250px 0 0 200px;
+    }
+    .main-screen__scroll-bar {
+        flex-direction: column;
+    }
+    .scroll__count {
+        -webkit-transform: rotateZ(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotateZ(90deg);
+    }
+    .scroll__ellipses {
+        margin: 85px 0 0 0;
+        flex-direction: column;
+    }
+    .scroll__ellipses .ellips {
+        margin: 0 auto 40px auto;
+    }
+    .main_bg .shudow_letter{
+        top: 23%;
+    }
+    /* --------------------------------------- */
+    /* -------------------------------------------------------- */
+
+    /* картинки фурнитуры и декора */
+    .furniture .shudow_letter{
+        left: 5%;
+        top: -42%;
+    }
+    .furniture_contant .furniture_image, .decore_contant .decore_image{
+        max-width: 340px;
+        min-height: 220px;
+    }
+    /* -------------------------------------- */
+
+
+    .large_video_block .large_video_content{
+        
+        margin: 0;
+    }
+    /* линии */
+    .large_video_block .large_video_content .name_block_y::before{
+        display: none;
+    }
+    .large_video_block .large_video_content .large_video_textw::before{
+        display: none;
+    }
+    /* ------------------------------- */
+
+    /* кнопка для ознакомительного видео */
+    .large_video_block .large_video_content .large_video_button a {
+        padding: 20px 55px;
+        
+    }
+    /* -------------------------------------------- */
+}
+@media(max-width: 660px){
+    .name_block_b::before{
+        display: none;
+    }
+    .small_line_textb::before{
+        display: none;
+    }
+
+    /* картинка блока о нас */
+    .about_us .about_us_content .about_us_image {
+        max-width: 390px;
+        height: 260px;
+    }
+    /* -------------------------------- */
+
+    
+    /* подвал */
+    .footer .footer_content{
+        flex-direction: column;
+    }
+    .footer_age, .footer_logo, .footer_text{
+        margin: 30px 0 0 0;
+    }
+    .footer_age{
+        order: 3;
+    }
+    .footer_logo{
+        order: 1;
+    }
+    .footer_text{
+        order: 2;
+    }
+    /* --------------------------------- */
+}
+@media(max-width: 550px){
+    .main_bg .shudow_text{
+        right: 50%;
+        top: 77%;
+    }
+
+    /* линия для ознакомительного видео лока */
+    .large_video_lines{
+        display: none;
+    }
+    /* ----------------------------------------- */
+}
+
+
+@media(max-width: 430px){
+    .menu-burger__button p{
+        display: none;
+    }
+
+
+    /* подвал */
+    .dropdown {
+        
+        right: 15px;
+        
+    }
+    /* ------------------------------------ */
+
+    .large_video_block .large_video_content .large_video_button a{
+        padding: 10px 40px;
+    }
+
+    .about_us .about_us_content .about_us_image {
+        max-width: 300px;
+        height: 200px;
+    }
+}
