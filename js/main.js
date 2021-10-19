@@ -2,7 +2,7 @@
 // навигация
 $(function($) {
   $(window).scroll(function(){
-      if($(this).scrollTop()>150){
+      if($(this).scrollTop()>0){
           $('#navigation').addClass('fixed');
       }
       else if ($(this).scrollTop()<1){
