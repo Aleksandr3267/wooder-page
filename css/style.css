@@ -60,7 +60,7 @@ body{
   justify-content: space-between;
   align-items: center;
   transition: 0.5s ease;
-  z-index: 100000000000;
+  z-index: 100;
   
 }
 #navigation{
@@ -87,7 +87,7 @@ body.lock{
   z-index: 1000;
 }
 .nav_left .menu-burger{
-  z-index: 10000;
+  z-index: 100;
 }
 .content.burger-open,
 .header.burger-open {
@@ -240,6 +240,7 @@ body.lock{
 /* иконка инфы */
 .icon_inf{
   margin: 0 20px 0 0;
+  position: relative;
 }
 .icon_inf i{
   color: white;
@@ -247,6 +248,29 @@ body.lock{
 }
 .icon_inf i:hover{
   cursor: pointer;
+}
+.icon_inf .icon_inf-card{
+  position: absolute;
+  padding: 20px;
+  display: inline-block;
+  background:rgba(255, 255, 255, 0.9);
+  border: 2px solid #a9946e;
+  border-radius:10px;
+  font-weight: 600;
+  color:black;
+  font-size: 1em;
+  z-index: 1;
+  right: 10px;
+  top: 25px;
+  line-height: 20px;
+
+  opacity: 0;
+  transform: translateY(15px);
+  transition: 0.1s linear;
+}
+.icon_inf-card.open{
+  opacity: 1;
+  transform: translateY(0px);
 }
 /* ---------------------------------- */
 /*блок для смены языка страницы */
@@ -489,13 +513,11 @@ body:hover .dropdown-content{
 /* анимация стрелки для скролинга вниз */
 @keyframes arrow_down{
   0%{
-    margin:50px;
   }
   50%{
-    
   }
   100%{
-    margin:60px;
+    transform: rotate(90deg) translateX(10px);
   }
 }
 /* ------------------ */
@@ -531,6 +553,60 @@ body:hover .dropdown-content{
   right: 30px;
   bottom: 25px;
 }
+
+/* [title]{
+  position: relative;
+}
+[title]::after{
+  content:attr(title);
+    color:white;
+    background:#bea67c;
+    padding:10px;
+    position:absolute;
+    left:-9999px;
+    border-radius:5px;
+    opacity:0;
+    bottom:-300%;
+    white-space:nowrap;
+    -webkit-transition:0.25s linear opacity;
+    transition:0.25s linear opacity;
+}
+[title]:hover:after{
+  left:-55px;
+  opacity:1;
+} */
+
+.ya-share2{
+  transition: 0.3s ease;
+  opacity: 0;
+  /* background:#a9946e; */
+  background: rgba(0,0,0,0.8);
+    border: 2px solid #a9946e;
+  padding: 12px;
+  border-radius:10px;
+  position: absolute;
+  right: 0;
+}
+.ya-share2 .ya-share2__list{
+  display: flex;
+}
+.ya-share2 .ya-share2__list .ya-share2__item{
+  margin: 2px 5px !important;
+}
+.ya-share2__container_shape_round.ya-share2__container_size_m .ya-share2__badge .ya-share2__icon:not(.ya-share2__icon_messenger-contact):not(.ya-share2__icon_more):not(.ya-share2__icon_copy) {
+  background-size: 30px 30px !important;
+}
+.ya-share2__container_size_m .ya-share2__badge .ya-share2__icon {
+  height: 34px !important;
+  width: 34px !important;
+}
+.ya-share2.open{
+  opacity: 1;
+  z-index: 90;
+}
+
+
+
 .main_bg .share_shudow i{
   font-size: 30px;
   color: #bea67c;
@@ -874,6 +950,40 @@ body:hover .dropdown-content{
   width: 100%;
   max-width: 950px;
 }
+
+.exit-video{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 1001;
+  cursor: pointer;
+  display: none;
+  transition: 0.4s ease;
+}
+.exit-video:hover{
+  opacity: 0.6;
+}
+.exit-video.open{
+  display: block;
+}
+.exit-video::after, .exit-video::before{
+  content:"";
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  display: inline-block;
+  background: white;
+}
+.exit-video::after{
+  transform: rotate(-45deg);
+}
+.exit-video::before{
+  transform: rotate(45deg);
+}
 /* ----------------------------- */
 /* блок с видео */
 .quality .quality_videos_block .quality_video{
@@ -891,6 +1001,7 @@ body:hover .dropdown-content{
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 }
 /* ---------------------- */
 /* линия под видосом */
@@ -903,42 +1014,51 @@ body:hover .dropdown-content{
   height: 1.2px;
   background: #bea67c;
 }
-/* ---------------------- */
+
 /* само видео */
-.vidos iframe{
-  border-radius: 50%;
-  transform: scale(0);
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 240px;
-  height: 240px;
-  top: 0;
-}
-.vidos #video1.open1, .vidos #video2.open2, .vidos #video3.open3{
-  transform: scale(1);
-}
-video{
-  background-color: black;
-}
-/* ----------------------- */
-/* фон для видео */
 .overflow_video1, .overflow_video2, .overflow_video3{
   width: 100%;
-  border-radius: 50%;
   max-width: 240px;
+  min-width: 240px;
   height: 240px;
-  z-index: 10;
-  position: absolute;
-  top: 6.8%;
-  padding: 20px;
 }
+body.lock-video{
+  overflow: hidden;
+}
+.vidos .video-bg, .video-bg2, .video-bg3{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  transition: 0.3s ease;
+  background:rgba(0,0,0,0.9);
+
+  z-index: -10;
+}
+.vidos .video-bg video, .vidos .video-bg2 video, .vidos .video-bg3 video{
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+.vidos .video-bg.open1, .vidos .video-bg2.open2, .vidos .video-bg3.open3{
+  opacity: 1;
+  z-index: 1000;
+}
+
+
 .quality_video .vidos .overflow_video1{
   background: url(../img/image_1.webp) no-repeat center top / cover;
 }
 .quality_video .vidos .overflow_video2{
   background: url(../img/image_2.webp) no-repeat center top / cover;
-  
 }
 .quality_video .vidos .overflow_video3{
   background: url(../img/image_3.webp) no-repeat center top / cover;
@@ -956,7 +1076,7 @@ video{
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 100;
+  z-index: 10;
   top: 37%;
   left: 37%;
 }
@@ -1008,7 +1128,7 @@ video{
 .large_video_block .large_video_content{
   padding: 0 20px;
   margin: 0 0 0 22%;
-  z-index: 1000;
+  z-index: 10;
   
 }
 /* кнопка для просмотра одного видео */
@@ -1059,6 +1179,73 @@ video{
 .large_video_button a:hover > .video_icon::before{
   border-left: 10px solid black;
 }
+
+
+
+.video-bg-large{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  transition: 0.3s ease;
+  background:rgba(0,0,0,0.9);
+  z-index: -10;
+}
+.video-bg-large video{
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+.video-bg-large.open-large{
+  opacity: 1;
+  z-index: 1000;
+}
+
+.exit-video-large{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 1001;
+  cursor: pointer;
+  display: none;
+  transition: 0.4s ease;
+}
+.exit-video-large:hover{
+  opacity: 0.6;
+}
+.exit-video-large.open{
+  display: block;
+}
+.exit-video-large::after, .exit-video-large::before{
+  content:"";
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  display: inline-block;
+  background: white;
+}
+.exit-video-large::after{
+  transform: rotate(-45deg);
+}
+.exit-video-large::before{
+  transform: rotate(45deg);
+}
+
+
+
+
 /* -------------------------------------------------------------*/
 .large_video_lines{
   position: absolute;
